@@ -1,0 +1,633 @@
+\doxysection{Referência ao ficheiro C\+:/\+Users/\+Areal/\+Documents/\+Git\+Hub/\+CProjects/\+EDA/\+PFase2/lib/lib.h}
+\label{lib_8h}\index{C:/Users/Areal/Documents/GitHub/CProjects/EDA/PFase2/lib/lib.h@{C:/Users/Areal/Documents/GitHub/CProjects/EDA/PFase2/lib/lib.h}}
+
+
+Ficheiro Header da biblioteca \textquotesingle{}lib\textquotesingle{}.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+\doxysubsubsection*{Estruturas de Dados}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Vertice}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um vértice em um grafo. \end{DoxyCompactList}\item 
+struct \textbf{ Aresta}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa uma aresta num grafo. \end{DoxyCompactList}\item 
+struct \textbf{ GR}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um grafo. \end{DoxyCompactList}\item 
+struct \textbf{ Caminho}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar caminhos com a maior soma. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ Vertice} \textbf{ Vertice}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um vértice em um grafo. \end{DoxyCompactList}\item 
+typedef struct \textbf{ Aresta} \textbf{ Aresta}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa uma aresta num grafo. \end{DoxyCompactList}\item 
+typedef struct \textbf{ GR} \textbf{ GR}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um grafo. \end{DoxyCompactList}\item 
+typedef struct \textbf{ Caminho} \textbf{ Caminho}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar caminhos com a maior soma. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ add\+\_\+aresta} (\textbf{ Vertice} $\ast$v1, \textbf{ Vertice} $\ast$v2, int peso)
+\begin{DoxyCompactList}\small\item\em Adiciona uma aresta entre dois vértices com o peso especificado. \end{DoxyCompactList}\item 
+int \textbf{ rem\+\_\+aresta} (\textbf{ GR} $\ast$grafo, int index\+\_\+origem, int index\+\_\+destino)
+\begin{DoxyCompactList}\small\item\em Remove a aresta entre dois vértices especificados. \end{DoxyCompactList}\item 
+\textbf{ GR} $\ast$ \textbf{ criar\+\_\+grafo} (int num\+\_\+vertices)
+\begin{DoxyCompactList}\small\item\em Cria um novo grafo com um número especificado de vértices. \end{DoxyCompactList}\item 
+\textbf{ GR} $\ast$ \textbf{ carrega\+\_\+fich} (const char $\ast$nomefich)
+\begin{DoxyCompactList}\small\item\em Lê e inicializa o grafo a partir de um ficheiro, dado pelo seu caminho. \end{DoxyCompactList}\item 
+int \textbf{ alterar\+\_\+peso} (\textbf{ GR} $\ast$grafo, int index\+\_\+origem, int index\+\_\+destino, int novo\+\_\+peso)
+\begin{DoxyCompactList}\small\item\em Altera o peso de uma aresta entre dois vértices especificados. \end{DoxyCompactList}\item 
+int \textbf{ encontrar\+\_\+maior\+\_\+soma\+\_\+caminho} (\textbf{ GR} $\ast$grafo)
+\begin{DoxyCompactList}\small\item\em Função para encontrar o caminho com a maior soma possível de pesos das arestas no grafo. \end{DoxyCompactList}\item 
+void \textbf{ dfs} (\textbf{ Vertice} $\ast$v, int destino, int $\ast$visitados, int $\ast$caminho, int nivel, int $\ast$maior\+\_\+soma, \textbf{ Caminho} $\ast$$\ast$melhores\+\_\+caminhos, \textbf{ GR} $\ast$grafo)
+\begin{DoxyCompactList}\small\item\em Realiza uma pesquisa em profundidade (DFS) no grafo para encontrar o caminho com a maior soma. \end{DoxyCompactList}\item 
+int \textbf{ soma\+\_\+pesos\+\_\+caminho} (\textbf{ GR} $\ast$grafo, int $\ast$caminho, int tamanho\+\_\+caminho)
+\begin{DoxyCompactList}\small\item\em Calcula a soma dos pesos das arestas num dado caminho no grafo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Ficheiro Header da biblioteca \textquotesingle{}lib\textquotesingle{}. 
+
+\begin{DoxyAuthor}{Autor}
+Miguel Areal ({\texttt{ a29559@alunos.\+ipca.\+pt}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+04-\/2024
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+Definido no ficheiro \textbf{ lib.\+h}.
+
+
+
+\doxysubsection{Documentação dos tipos}
+\label{lib_8h_a4dfeea32aaaf68604a93805ab84f33e1} 
+\index{lib.h@{lib.h}!Aresta@{Aresta}}
+\index{Aresta@{Aresta}!lib.h@{lib.h}}
+\doxysubsubsection{Aresta}
+{\footnotesize\ttfamily typedef struct \textbf{ Aresta} \textbf{ Aresta}}
+
+
+
+Estrutura que representa uma aresta num grafo. 
+
+Cada aresta contém um ponteiro para um vértice de destino, um peso associado e um ponteiro para a próxima aresta na lista ligada. \label{lib_8h_a3f0cb4117cdc19cde5f8f63fdab01c20} 
+\index{lib.h@{lib.h}!Caminho@{Caminho}}
+\index{Caminho@{Caminho}!lib.h@{lib.h}}
+\doxysubsubsection{Caminho}
+{\footnotesize\ttfamily typedef struct \textbf{ Caminho} \textbf{ Caminho}}
+
+
+
+Estrutura para armazenar caminhos com a maior soma. 
+
+Esta estrutura é usada para armazenar uma lista ligada de caminhos no grafo. Cada caminho é representado por uma sequência de vértices e o tamanho dessa sequência. A estrutura também possui um ponteiro para o próximo caminho na lista, permitindo a criação de uma lista ligada de caminhos. \label{lib_8h_a673a73566a701f4c439ea07aafa902fd} 
+\index{lib.h@{lib.h}!GR@{GR}}
+\index{GR@{GR}!lib.h@{lib.h}}
+\doxysubsubsection{GR}
+{\footnotesize\ttfamily typedef struct \textbf{ GR} \textbf{ GR}}
+
+
+
+Estrutura que representa um grafo. 
+
+Um grafo é composto por um array de vértices e o número total de vértices no grafo. \label{lib_8h_a901d403606dfb55e6d42b899c05d3347} 
+\index{lib.h@{lib.h}!Vertice@{Vertice}}
+\index{Vertice@{Vertice}!lib.h@{lib.h}}
+\doxysubsubsection{Vertice}
+{\footnotesize\ttfamily typedef struct \textbf{ Vertice} \textbf{ Vertice}}
+
+
+
+Estrutura que representa um vértice em um grafo. 
+
+Cada vértice contém um valor inteiro, um ponteiro para a lista de arestas conectadas a ele e o número de arestas. 
+
+\doxysubsection{Documentação das funções}
+\label{lib_8h_a38992837f5e9da4db5b62ab02b4e0278} 
+\index{lib.h@{lib.h}!add\_aresta@{add\_aresta}}
+\index{add\_aresta@{add\_aresta}!lib.h@{lib.h}}
+\doxysubsubsection{add\_aresta()}
+{\footnotesize\ttfamily int add\+\_\+aresta (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{v1,  }\item[{\textbf{ Vertice} $\ast$}]{v2,  }\item[{int}]{peso }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma aresta entre dois vértices com o peso especificado. 
+
+Esta função cria espaço na memória para uma nova aresta entre os vértices de origem e destino fornecidos, com o peso especificado, e adiciona-\/a à lista de arestas do vértice de origem.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em v1} & O vértice de origem da aresta. \\
+\hline
+{\em v2} & O vértice de destino da aresta. \\
+\hline
+{\em peso} & O peso associado à aresta. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 0\+: Sucesso. -\/1\+: Erro\+: Falha na alocação de memória. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 15} do ficheiro \textbf{ lib.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ Aresta\ *nova\_aresta\ =\ (Aresta*)malloc(\textcolor{keyword}{sizeof}(Aresta));}
+\DoxyCodeLine{00017\ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nova\_aresta\ ==\ NULL)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ a\ alocação\ de\ memória\ falhar,\ retorna\ 1\ (falha)}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ nova\_aresta-\/>destino\ =\ v2;}
+\DoxyCodeLine{00022\ \ \ \ \ nova\_aresta-\/>peso\ =\ peso;}
+\DoxyCodeLine{00023\ \ \ \ \ nova\_aresta-\/>proxima\ =\ v1-\/>arestas;\ \textcolor{comment}{//\ Aponta\ para\ a\ primeira\ aresta\ da\ lista\ atual}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ A\ nova\ aresta\ fica\ a\ primeira\ da\ lista}}
+\DoxyCodeLine{00026\ \ \ \ \ v1-\/>arestas\ =\ nova\_aresta;}
+\DoxyCodeLine{00027\ \ \ \ \ v1-\/>num\_arestas++;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+\label{lib_8h_aff7d892dd0151fdd358454351233ada1} 
+\index{lib.h@{lib.h}!alterar\_peso@{alterar\_peso}}
+\index{alterar\_peso@{alterar\_peso}!lib.h@{lib.h}}
+\doxysubsubsection{alterar\_peso()}
+{\footnotesize\ttfamily int alterar\+\_\+peso (\begin{DoxyParamCaption}\item[{\textbf{ GR} $\ast$}]{grafo,  }\item[{int}]{index\+\_\+origem,  }\item[{int}]{index\+\_\+destino,  }\item[{int}]{novo\+\_\+peso }\end{DoxyParamCaption})}
+
+
+
+Altera o peso de uma aresta entre dois vértices especificados. 
+
+Esta função permite alterar o peso de uma aresta que conecta o vértice de origem ao vértice de destino.
+
+A função percorre a lista de arestas do vértice de origem até encontrar a aresta que conecta ao vértice de destino. Quando essa aresta é encontrada, o seu peso é atualizado com o valor especificado. Se a aresta não for encontrada, a função imprime uma mensagem de erro indicando a falta de conexão entre os vértices, e retorna 0.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em grafo} & Ponteiro para a instância do grafo. \\
+\hline
+{\em index\+\_\+origem} & Índice do vértice de origem. \\
+\hline
+{\em index\+\_\+destino} & Índice do vértice de destino. \\
+\hline
+{\em novo\+\_\+peso} & Novo valor que substituirá o peso atual da aresta.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 0\+: Sucesso. -\/31 \+: Erro\+: Vértices inválidos. -\/32 \+: Erro\+: Não foi encontrada uma aresta entre os vértices especificados. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 141} do ficheiro \textbf{ lib.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\_origem\ <\ 0\ ||\ index\_origem\ >=\ grafo-\/>num\_vertices\ ||\ index\_destino\ <\ 0\ ||\ index\_destino\ >=\ grafo-\/>num\_vertices)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Erro:\ Vértice\ inválidos.\(\backslash\)n"{});}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/31;}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ Vertice\ *v\_origem\ =\ \&(grafo-\/>vertices[index\_origem]);}
+\DoxyCodeLine{00149\ \ \ \ \ Vertice\ *v\_destino\ =\ \&(grafo-\/>vertices[index\_destino]);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{for}\ (Aresta\ *a\ =\ v\_origem-\/>arestas;\ a\ !=\ NULL;\ a\ =\ a-\/>proxima)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ a\ aresta\ se\ conectar\ ao\ vértice\ de\ destino,\ atualiza\ o\ peso}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a-\/>destino\ ==\ v\_destino)\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ a-\/>peso\ =\ novo\_peso;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{comment}{//\ Se\ não\ encontrar\ a\ aresta}}
+\DoxyCodeLine{00160\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Erro:\ Não\ foi\ encontrada\ uma\ aresta\ entre\ os\ vértices\ especificados.\(\backslash\)n"{}});}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/32;}
+\DoxyCodeLine{00162\ \}}
+
+\end{DoxyCode}
+\label{lib_8h_a0cdaf53d97ea663ac16f5cdbcca34cce} 
+\index{lib.h@{lib.h}!carrega\_fich@{carrega\_fich}}
+\index{carrega\_fich@{carrega\_fich}!lib.h@{lib.h}}
+\doxysubsubsection{carrega\_fich()}
+{\footnotesize\ttfamily \textbf{ GR} $\ast$ carrega\+\_\+fich (\begin{DoxyParamCaption}\item[{const char $\ast$}]{nomefich }\end{DoxyParamCaption})}
+
+
+
+Lê e inicializa o grafo a partir de um ficheiro, dado pelo seu caminho. 
+
+Lê o ficheiro de texto que contém uma matriz formatada com pontos e vírgulas e inicializa um grafo com base nessa matriz. Se a matriz conter pesos nulos ou \textquotesingle{}0\textquotesingle{}, estes serão ignorados, passando para o valor seguinte. A leitura da matriz para um grafo dá-\/se por entender que cada coordenada representa uma conexão entre dois vértices. Cada índice de coluna e linha representa um vértice. Exemplo\+: x;y y;x
+
+$\vert$$\vert$$\vert$$\vert$ V1 $\vert$ V2 $\vert$ $\vert$\+V1$\vert$ X $\vert$ Y $\vert$ $\vert$\+V2$\vert$ Y $\vert$ X $\vert$
+
+A regra utilizada para a geração do grafo é que cada vértice da linha se conectará aos vértices de cada coluna incluindo, se assim possível, até ele próprio (lacete).
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nomefich} & \doxyref{Caminho}{p. }{struct_caminho} do ficheiro de texto que contém a matriz formatada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+GR$\ast$ Um ponteiro para a estrutura do grafo inicializado e operacional. NULL \+: Erro\+: Erro ao abrir o ficheiro. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 84} do ficheiro \textbf{ lib.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ FILE\ *file\ =\ fopen(nomefich,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ NULL)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_linhas\ =\ 0;}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_colunas\ =\ 0;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{char}\ linha[256];}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ Conta\ o\ número\ de\ linhas\ e\ o\ número\ máximo\ de\ colunas}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{while}\ (fgets(linha,\ \textcolor{keyword}{sizeof}(linha),\ file))\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *token\ =\ strtok(linha,\ \textcolor{stringliteral}{"{};"{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ col\ =\ 0;\ \textcolor{comment}{//\ índice\ da\ coluna}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (token\ !=\ NULL)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(token,\ \textcolor{stringliteral}{"{}\ "{}})\ !=\ 0)\ \{\ \textcolor{comment}{//\ Ignora\ os\ valores\ vazios\ ou\ nulos}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ col++;\ \textcolor{comment}{//Incrementa\ colunas}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ token\ =\ strtok(NULL,\ \textcolor{stringliteral}{"{};"{}});}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ max\_linhas++;\ \textcolor{comment}{//\ Incrementa\ linhas\ }}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (col\ >\ max\_colunas)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ max\_colunas\ =\ col;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ rewind(file);\ \textcolor{comment}{//\ Volta\ ao\ início}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//\ Determina\ o\ tamanho\ do\ grafo\ com\ base\ no\ maior\ número\ de\ linhas\ ou\ colunas}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{int}\ tamanho\_grafo\ =\ (max\_linhas\ >\ max\_colunas)\ ?\ max\_linhas\ :\ max\_colunas;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{comment}{//\ Cria\ o\ grafo\ com\ o\ tamanho\ determinado}}
+\DoxyCodeLine{00116\ \ \ \ \ GR\ *grafo\ =\ criar\_grafo(tamanho\_grafo);}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ lin\ =\ 0;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{while}\ (fgets(linha,\ \textcolor{keyword}{sizeof}(linha),\ file))\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *token\ =\ strtok(linha,\ \textcolor{stringliteral}{"{};"{}});}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ col\ =\ 0;\ \textcolor{comment}{//\ índice\ da\ coluna}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (token\ !=\ NULL)\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(token,\ \textcolor{stringliteral}{"{}\ "{}})\ !=\ 0)\ \{\ \textcolor{comment}{//\ Ignora\ os\ valores\ vazios\ ou\ nulos}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ valor\ =\ atoi(token);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(valor\ !=\ 0)\{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ add\_aresta(\&(grafo-\/>vertices[lin]),\ \&(grafo-\/>vertices[col]),\ valor);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ col++;\ \textcolor{comment}{//\ Incrementa\ o\ índice\ da\ coluna}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ token\ =\ strtok(NULL,\ \textcolor{stringliteral}{"{};"{}});}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ o\ número\ de\ colunas\ for\ menor\ que\ o\ máximo,\ não\ é\ necessário\ adicionar\ arestas\ vazias}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ para\ os\ vértices\ restantes,\ pois\ as\ arestas\ já\ estão\ inicializadas\ como\ NULL}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ lin++;}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ fclose(file);}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{return}\ grafo;}
+\DoxyCodeLine{00138\ \}}
+
+\end{DoxyCode}
+\label{lib_8h_a3ca19fd87075df71ad6044dce237f195} 
+\index{lib.h@{lib.h}!criar\_grafo@{criar\_grafo}}
+\index{criar\_grafo@{criar\_grafo}!lib.h@{lib.h}}
+\doxysubsubsection{criar\_grafo()}
+{\footnotesize\ttfamily \textbf{ GR} $\ast$ criar\+\_\+grafo (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+vertices }\end{DoxyParamCaption})}
+
+
+
+Cria um novo grafo com um número especificado de vértices. 
+
+Esta função aloca espaço na memória para um novo grafo consoante o parâmetro num\+\_\+vertices. Aloca espaço na memória para a estrutura de Vertices. Inicializa todos os seus vértices através da função auxiliar criar\+\_\+vertice.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em num\+\_\+vertices} & O número de vértices que o grafo deve conter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Um ponteiro para o novo grafo criado, ou NULL se a alocação de memória falhar. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 70} do ficheiro \textbf{ lib.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ GR\ *grafo\ =\ (GR*)malloc(\textcolor{keyword}{sizeof}(GR));}
+\DoxyCodeLine{00072\ \ \ \ \ grafo-\/>vertices\ =\ (Vertice*)malloc(num\_vertices\ *\ \textcolor{keyword}{sizeof}(Vertice));}
+\DoxyCodeLine{00073\ \ \ \ \ grafo-\/>num\_vertices\ =\ num\_vertices;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Inicialização\ de\ cada\ vértice}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ num\_vertices;\ i++)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ grafo-\/>vertices[i]\ =\ *criar\_vertice(i);}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{return}\ grafo;}
+\DoxyCodeLine{00081\ \}}
+
+\end{DoxyCode}
+\label{lib_8h_abd5081b39f99fc214ae54edf069283a6} 
+\index{lib.h@{lib.h}!dfs@{dfs}}
+\index{dfs@{dfs}!lib.h@{lib.h}}
+\doxysubsubsection{dfs()}
+{\footnotesize\ttfamily void dfs (\begin{DoxyParamCaption}\item[{\textbf{ Vertice} $\ast$}]{v,  }\item[{int}]{destino,  }\item[{int $\ast$}]{visitados,  }\item[{int $\ast$}]{caminho,  }\item[{int}]{nivel,  }\item[{int $\ast$}]{maior\+\_\+soma,  }\item[{\textbf{ Caminho} $\ast$$\ast$}]{melhores\+\_\+caminhos,  }\item[{\textbf{ GR} $\ast$}]{grafo }\end{DoxyParamCaption})}
+
+
+
+Realiza uma pesquisa em profundidade (DFS) no grafo para encontrar o caminho com a maior soma. 
+
+Esta função utiliza a técnica de pesquisa em profundidade (DFS) para percorrer o grafo a partir de um vértice inicial, calculando as somas dos valores dos vértices ao longo dos caminhos. Ela armazena o caminho com a maior soma encontrada e atualiza as estruturas de dados correspondentes.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em v} & Apontador para o vértice atual a partir do qual a busca está a ser realizada. \\
+\hline
+{\em destino} & Valor do vértice de destino. Se for -\/1, a busca considera todos os vértices como destinos válidos. \\
+\hline
+{\em visitados} & Array de inteiros que indica quais vértices foram visitados. Cada posição representa um vértice, onde um valor diferente de zero indica que o vértice foi visitado. \\
+\hline
+{\em caminho} & Array de inteiros que armazena o caminho atual percorrido durante a busca. Cada posição representa um vértice no caminho. \\
+\hline
+{\em nivel} & Nível atual na busca, representando a profundidade da recursividade. Também usado como índice para o array caminho. \\
+\hline
+{\em maior\+\_\+soma} & Apontador para a variável que armazena a maior soma encontrada até ao momento. A função atualiza este valor sempre que um caminho com uma soma maior é encontrado. \\
+\hline
+{\em melhores\+\_\+caminhos} & Apontador duplo para a estrutura \doxyref{Caminho}{p. }{struct_caminho} que armazena o melhor caminho encontrado até ao momento. A função atualiza esta estrutura conforme novos caminhos com maiores somas são encontrados. \\
+\hline
+{\em grafo} & Apontador para a estrutura do grafo que contém os vértices e as suas conexões.\\
+\hline
+\end{DoxyParams}
+A função não retorna valores, mas atualiza os ponteiros passados como argumentos para refletir os melhores caminhos e as suas somas. 
+
+Definido na linha \textbf{ 257} do ficheiro \textbf{ lib.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00258\ \ \ \ \ visitados[v-\/>valor]\ =\ 1;}
+\DoxyCodeLine{00259\ \ \ \ \ caminho[nivel]\ =\ v-\/>valor;}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{if}\ (nivel\ >\ 0)\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ soma\_caminho\ =\ soma\_pesos\_caminho(grafo,\ caminho,\ nivel\ +\ 1);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (soma\_caminho\ >\ *maior\_soma)\ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Atualiza\ a\ maior\ soma\ e\ limpa\ a\ lista\ de\ melhores\ caminhos}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ *maior\_soma\ =\ soma\_caminho;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ limpar\_caminhos(*melhores\_caminhos);}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ *melhores\_caminhos\ =\ NULL;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ adicionar\_caminho(melhores\_caminhos,\ caminho,\ nivel\ +\ 1);}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (soma\_caminho\ ==\ *maior\_soma)\ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Adiciona\ o\ novo\ caminho\ à\ lista\ de\ melhores\ caminhos}}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ adicionar\_caminho(melhores\_caminhos,\ caminho,\ nivel\ +\ 1);}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \ \ \ \ \}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ Aresta\ *aresta\ =\ v-\/>arestas;}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordflow}{while}\ (aresta\ !=\ NULL)\ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!visitados[aresta-\/>destino-\/>valor])\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ dfs(aresta-\/>destino,\ destino,\ visitados,\ caminho,\ nivel\ +\ 1,\ maior\_soma,\ melhores\_caminhos,\ grafo);}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ aresta\ =\ aresta-\/>proxima;}
+\DoxyCodeLine{00281\ \ \ \ \ \}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{comment}{//\ Reseta\ o\ vértice\ atual\ após\ a\ visita}}
+\DoxyCodeLine{00284\ \ \ \ \ visitados[v-\/>valor]\ =\ 0;}
+\DoxyCodeLine{00285\ \}}
+
+\end{DoxyCode}
+\label{lib_8h_a7a7045043b24b785684c46e21cc93efe} 
+\index{lib.h@{lib.h}!encontrar\_maior\_soma\_caminho@{encontrar\_maior\_soma\_caminho}}
+\index{encontrar\_maior\_soma\_caminho@{encontrar\_maior\_soma\_caminho}!lib.h@{lib.h}}
+\doxysubsubsection{encontrar\_maior\_soma\_caminho()}
+{\footnotesize\ttfamily int encontrar\+\_\+maior\+\_\+soma\+\_\+caminho (\begin{DoxyParamCaption}\item[{\textbf{ GR} $\ast$}]{grafo }\end{DoxyParamCaption})}
+
+
+
+Função para encontrar o caminho com a maior soma possível de pesos das arestas no grafo. 
+
+Esta função percorre todos os vértices do grafo e utiliza a função de busca em profundidade (DFS) para encontrar o caminho com a maior soma possível de pesos das arestas. Se houver múltiplos caminhos com a mesma soma máxima, mostrará todos esses caminhos.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em grafo} & Ponteiro para a estrutura do grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 0\+: Sucesso. -\/44 \+: Erro\+: Nenhum caminho encontrado. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 210} do ficheiro \textbf{ lib.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{comment}{//\ Variáveis\ para\ armazenar\ a\ maior\ soma\ e\ a\ lista\ de\ melhores\ caminhos}}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{int}\ maior\_soma\ =\ INT\_MIN;\ \textcolor{comment}{//\ Inicializa\ com\ o\ menor\ valor\ possível\ de\ um\ inteiro}}
+\DoxyCodeLine{00213\ \ \ \ \ Caminho\ *melhores\_caminhos\ =\ NULL;}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{comment}{//\ Itera\ sobre\ todos\ os\ vértices}}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ grafo-\/>num\_vertices;\ i++)\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Array\ para\ marcar\ os\ vértices\ visitados\ durante\ a\ pesquisa}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *visitados\ =\ (\textcolor{keywordtype}{int}\ *)malloc(grafo-\/>num\_vertices\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ memset(visitados,\ 0,\ grafo-\/>num\_vertices\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Array\ para\ armazenar\ o\ caminho\ atual\ durante\ a\ pesquisa}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *caminho\_atual\ =\ (\textcolor{keywordtype}{int}\ *)malloc(grafo-\/>num\_vertices\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Realiza\ a\ busca\ em\ profundidade\ (DFS)\ a\ partir\ do\ vértice\ atual}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ dfs(\&(grafo-\/>vertices[i]),\ -\/1,\ visitados,\ caminho\_atual,\ 0,\ \&maior\_soma,\ \&melhores\_caminhos,\ grafo);}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Liberta\ a\ memória\ alocada\ para\ os\ vetores}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ free(visitados);}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ free(caminho\_atual);}
+\DoxyCodeLine{00230\ \ \ \ \ \}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{comment}{//\ Mostra\ a\ maior\ soma\ encontrada\ e\ os\ caminhos\ correspondentes}}
+\DoxyCodeLine{00233\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Caminhos:\(\backslash\)n"{}});}
+\DoxyCodeLine{00234\ \ \ \ \ Caminho\ *caminho\ =\ melhores\_caminhos;}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{while}\ (caminho\ !=\ NULL)\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ caminho-\/>tamanho;\ i++)\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}V\%d"{}},\ caminho-\/>vertices[i]\ +\ 1);\ \textcolor{comment}{//\ Vértices\ numerados\ de\ 1\ a\ n}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ caminho-\/>tamanho\ -\/\ 1)\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ -\/>\ "{}});}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ caminho\ =\ caminho-\/>proximo;}
+\DoxyCodeLine{00244\ \ \ \ \ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordflow}{if}\ (melhores\_caminhos\ ==\ NULL)\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Nenhum\ caminho\ encontrado.\(\backslash\)n"{}});}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/44;}
+\DoxyCodeLine{00249\ \ \ \ \ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{comment}{//\ Libera\ a\ memória\ alocada\ para\ os\ caminhos}}
+\DoxyCodeLine{00252\ \ \ \ \ limpar\_caminhos(melhores\_caminhos);}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordflow}{return}\ maior\_soma;}
+\DoxyCodeLine{00254\ \}}
+
+\end{DoxyCode}
+\label{lib_8h_a8846c49cb4bba8dd9dc88ae07c9996a0} 
+\index{lib.h@{lib.h}!rem\_aresta@{rem\_aresta}}
+\index{rem\_aresta@{rem\_aresta}!lib.h@{lib.h}}
+\doxysubsubsection{rem\_aresta()}
+{\footnotesize\ttfamily int rem\+\_\+aresta (\begin{DoxyParamCaption}\item[{\textbf{ GR} $\ast$}]{grafo,  }\item[{int}]{index\+\_\+origem,  }\item[{int}]{index\+\_\+destino }\end{DoxyParamCaption})}
+
+
+
+Remove a aresta entre dois vértices especificados. 
+
+Esta função remove a aresta entre o vértice de origem e o vértice de destino, identificados pelos seus índices. Verifica se o grafo é nulo e se os índices dos vértices são válidos. Através dos índices, procura a aresta específicada. Se a aresta a ser removida for a primeira da lista, a remoção é direta. Caso contrário, ajusta os apontadores para manter a integridade da lista ligada de arestas.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em grafo} & Instância do grafo. \\
+\hline
+{\em index\+\_\+origem} & Índice do vértice de origem. \\
+\hline
+{\em index\+\_\+destino} & Índice do vértice de destino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 0\+:Sucesso. -\/12\+:Erro\+: Vértices Inválidos. -\/13\+:Erro\+: Não foi encontrada uma aresta entre os vértices especificados. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 32} do ficheiro \textbf{ lib.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo\ ==\ NULL\ ||\ index\_origem\ <\ 0\ ||\ index\_origem\ >=\ grafo-\/>num\_vertices\ ||}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ index\_destino\ <\ 0\ ||\ index\_destino\ >=\ grafo-\/>num\_vertices)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Vértices\ inválidos.\(\backslash\)n"{});}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/11;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ Vertice\ *origem\ =\ \&(grafo-\/>vertices[index\_origem]);}
+\DoxyCodeLine{00041\ \ \ \ \ Vertice\ *destino\ =\ \&(grafo-\/>vertices[index\_destino]);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Procurar\ a\ aresta\ no\ vértice\ de\ origem}}
+\DoxyCodeLine{00044\ \ \ \ \ Aresta\ *anterior\ =\ NULL;}
+\DoxyCodeLine{00045\ \ \ \ \ Aresta\ *atual\ =\ origem-\/>arestas;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>destino\ ==\ destino)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A\ aresta\ foi\ encontrada,\ removê-\/la}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ a\ aresta\ a\ ser\ removida\ é\ a\ primeira\ da\ lista}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (anterior\ ==\ NULL)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ origem-\/>arestas\ =\ atual-\/>proxima;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ a\ aresta\ a\ ser\ removida\ não\ é\ a\ primeira\ da\ lista}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anterior-\/>proxima\ =\ atual-\/>proxima;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ free(atual);\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ anterior\ =\ atual;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>proxima;}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Se\ não\ encontrar\ a\ aresta}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//printf("{}Erro:\ Não\ foi\ encontrada\ uma\ aresta\ entre\ os\ vértices\ especificados.\(\backslash\)n"{});}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/12;}
+\DoxyCodeLine{00067\ \}}
+
+\end{DoxyCode}
+\label{lib_8h_ad2eb0fd7f69177b9371039df31137b53} 
+\index{lib.h@{lib.h}!soma\_pesos\_caminho@{soma\_pesos\_caminho}}
+\index{soma\_pesos\_caminho@{soma\_pesos\_caminho}!lib.h@{lib.h}}
+\doxysubsubsection{soma\_pesos\_caminho()}
+{\footnotesize\ttfamily int soma\+\_\+pesos\+\_\+caminho (\begin{DoxyParamCaption}\item[{\textbf{ GR} $\ast$}]{grafo,  }\item[{int $\ast$}]{caminho,  }\item[{int}]{tamanho\+\_\+caminho }\end{DoxyParamCaption})}
+
+
+
+Calcula a soma dos pesos das arestas num dado caminho no grafo. 
+
+Esta função percorre um caminho especificado pelos índices dos vértices no grafo e soma os pesos das arestas entre os vértices consecutivos. Se o caminho ou os vértices forem inválidos, a função exibe uma mensagem de erro e retorna 1.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em grafo} & Ponteiro para a estrutura do grafo que contém os vértices e arestas. \\
+\hline
+{\em caminho} & Array de inteiros representando a sequência de vértices no caminho. \\
+\hline
+{\em tamanho\+\_\+caminho} & O número de vértices no array do caminho. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int A soma dos pesos das arestas no caminho especificado. -\/41 \+: Erro\+: \doxyref{Caminho}{p. }{struct_caminho} Inválido. -\/42 \+: Erro\+: Vértice inválido no caminho. -\/43 \+: Erro\+: Não foi encontrada uma aresta entre os vértices. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 165} do ficheiro \textbf{ lib.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{int}\ soma\_pesos\ =\ 0;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ o\ caminho\ é\ válido}}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{if}\ (caminho\ ==\ NULL\ ||\ tamanho\_caminho\ <=\ 0)\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Caminho\ inválido.\(\backslash\)n"{});}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/41;}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{comment}{//\ Itera\ sobre\ os\ vértices\ no\ caminho}}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tamanho\_caminho\ -\/\ 1;\ i++)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ o\ índice\ do\ vértice\ está\ dentro\ dos\ limites\ do\ grafo}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (caminho[i]\ <\ 0\ ||\ caminho[i]\ >=\ grafo-\/>num\_vertices\ ||\ caminho[i\ +\ 1]\ <\ 0\ ||\ caminho[i\ +\ 1]\ >=\ grafo-\/>num\_vertices)\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Vértice\ inválido\ no\ caminho.\(\backslash\)n"{});}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/42;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Procura\ a\ aresta\ entre\ os\ vértices}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ Vertice\ *v\_atual=\ \&(grafo-\/>vertices[caminho[i]]);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ Vertice\ *v\_prox\ =\ \&(grafo-\/>vertices[caminho[i\ +\ 1]]);}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ Aresta\ *aresta\ =\ v\_atual-\/>arestas;}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Procura\ a\ aresta\ que\ conecta\ os\ vértices}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (aresta\ !=\ NULL)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aresta-\/>destino\ ==\ v\_prox)\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Adiciona\ o\ peso\ da\ aresta\ ao\ sumatório\ dos\ pesos}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ soma\_pesos\ +=\ aresta-\/>peso;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \textcolor{comment}{//Encontrou\ a\ aresta}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Passa\ para\ a\ próxima\ aresta}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ aresta\ =\ aresta-\/>proxima;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ não\ encontrar\ a\ aresta\ que\ conecta\ os\ vértices}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aresta\ ==\ NULL)\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}Erro:\ Não\ foi\ encontrada\ uma\ aresta\ entre\ os\ vértices\ \%d\ e\ \%d.\(\backslash\)n"{},\ caminho[i],\ caminho[i\ +\ 1]);}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/43;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordflow}{return}\ soma\_pesos;}
+\DoxyCodeLine{00207\ \}}
+
+\end{DoxyCode}

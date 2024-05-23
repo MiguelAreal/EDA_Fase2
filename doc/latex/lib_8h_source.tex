@@ -1,0 +1,63 @@
+\doxysection{lib.\+h}
+\label{lib_8h_source}\index{C:/Users/Areal/Documents/GitHub/CProjects/EDA/PFase2/lib/lib.h@{C:/Users/Areal/Documents/GitHub/CProjects/EDA/PFase2/lib/lib.h}}
+\textbf{ Ir para a documentação deste ficheiro.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ LIB\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ LIB\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <limits.h>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Vertice\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ valor;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{struct\ }Aresta\ *arestas;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_arestas;}
+\DoxyCodeLine{00030\ \}\ Vertice;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Aresta\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{struct\ }Vertice\ *destino;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ peso;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{struct\ }Aresta\ *proxima;}
+\DoxyCodeLine{00042\ \}\ Aresta;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }GR\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ Vertice\ *vertices;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_vertices;}
+\DoxyCodeLine{00053\ \}\ GR;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Caminho\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ *vertices;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ tamanho;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{struct\ }Caminho\ *proximo;\ }
+\DoxyCodeLine{00067\ \}\ Caminho;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ Declaração\ das\ funções}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{int}\ add\_aresta(Vertice\ *v1,\ Vertice\ *v2,\ \textcolor{keywordtype}{int}\ peso);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{int}\ rem\_aresta(GR\ *grafo,\ \textcolor{keywordtype}{int}\ index\_origem,\ \textcolor{keywordtype}{int}\ index\_destino);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00109\ GR*\ criar\_grafo(\textcolor{keywordtype}{int}\ num\_vertices);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00132\ GR\ *carrega\_fich(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *nomefich);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00151\ \textcolor{keywordtype}{int}\ alterar\_peso(GR\ *grafo,\ \textcolor{keywordtype}{int}\ index\_origem,\ \textcolor{keywordtype}{int}\ index\_destino,\ \textcolor{keywordtype}{int}\ novo\_peso);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00163\ \textcolor{keywordtype}{int}\ encontrar\_maior\_soma\_caminho(GR\ *grafo);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00187\ \textcolor{keywordtype}{void}\ dfs(Vertice\ *v,\ \textcolor{keywordtype}{int}\ destino,\ \textcolor{keywordtype}{int}\ *visitados,\ \textcolor{keywordtype}{int}\ *caminho,\ \textcolor{keywordtype}{int}\ nivel,\ \textcolor{keywordtype}{int}\ *maior\_soma,\ Caminho\ **melhores\_caminhos,\ GR\ *grafo);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00202\ \textcolor{keywordtype}{int}\ soma\_pesos\_caminho(GR\ *grafo,\ \textcolor{keywordtype}{int}\ *caminho,\ \textcolor{keywordtype}{int}\ tamanho\_caminho);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LIB\_H}}
+
+\end{DoxyCode}

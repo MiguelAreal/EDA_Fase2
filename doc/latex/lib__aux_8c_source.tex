@@ -1,0 +1,70 @@
+\doxysection{lib\+\_\+aux.\+c}
+\label{lib__aux_8c_source}\index{C:/Users/Areal/Documents/GitHub/CProjects/EDA/PFase2/lib/lib\_aux.c@{C:/Users/Areal/Documents/GitHub/CProjects/EDA/PFase2/lib/lib\_aux.c}}
+\textbf{ Ir para a documentação deste ficheiro.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}lib\_aux.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Criar\ e\ inicializar\ um\ novo\ vértice}}
+\DoxyCodeLine{00015\ Vertice*\ criar\_vertice(\textcolor{keywordtype}{int}\ valor)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ Vertice\ *v\ =\ (Vertice*)malloc(\textcolor{keyword}{sizeof}(Vertice));}
+\DoxyCodeLine{00017\ \ \ \ \ v-\/>valor\ =\ valor;}
+\DoxyCodeLine{00018\ \ \ \ \ v-\/>arestas\ =\ NULL;}
+\DoxyCodeLine{00019\ \ \ \ \ v-\/>num\_arestas\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00021\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Adiciona\ um\ novo\ caminho\ à\ estrutura\ de\ Caminhos.}}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{int}\ adicionar\_caminho(Caminho\ **lista,\ \textcolor{keywordtype}{int}\ *caminho,\ \textcolor{keywordtype}{int}\ tamanho)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ Caminho\ *novo\_caminho\ =\ (Caminho*)malloc(\textcolor{keyword}{sizeof}(Caminho));}
+\DoxyCodeLine{00026\ \ \ \ \ novo\_caminho-\/>vertices\ =\ (\textcolor{keywordtype}{int}*)malloc(tamanho\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00027\ \ \ \ \ memcpy(novo\_caminho-\/>vertices,\ caminho,\ tamanho\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00028\ \ \ \ \ novo\_caminho-\/>tamanho\ =\ tamanho;}
+\DoxyCodeLine{00029\ \ \ \ \ novo\_caminho-\/>proximo\ =\ *lista;}
+\DoxyCodeLine{00030\ \ \ \ \ *lista\ =\ novo\_caminho;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ Limpar\ a\ lista\ de\ caminhos}}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ limpar\_caminhos(Caminho\ *lista)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{while}\ (lista\ !=\ NULL)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ Caminho\ *temp\ =\ lista;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ lista\ =\ lista-\/>proximo;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ free(temp-\/>vertices);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ free(temp);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ Função\ para\ imprimir\ o\ grafo\ na\ consola}}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ print\_grafo(GR\ *grafo)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ grafo-\/>num\_vertices;\ i++)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Vertice\ v\ =\ grafo-\/>vertices[i];}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}V\%d:\ "{}},\ v.valor\ +\ 1);\ \textcolor{comment}{//\ Vértices\ numerados\ de\ 1\ a\ n\ (em\ vez\ de\ 0\ a\ n)}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Imprime\ informações\ sobre\ as\ arestas\ conectadas\ ao\ vértice}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Aresta\ *a\ =\ v.arestas;\ a\ !=\ NULL;\ a\ =\ a-\/>proxima)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/>\ V\%d\ (Peso\ \%d)\ "{}},\ a-\/>destino-\/>valor\ +\ 1,\ a-\/>peso);\ \textcolor{comment}{//\ Vértices\ numerados\ de\ 1\ a\ n}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ Função\ para\ libertar\ a\ memória\ alocada}}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{int}\ liberta\_grafo(GR\ *grafo)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ grafo-\/>num\_vertices;\ i++)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Liberta\ a\ memória\ alocada\ para\ cada\ aresta}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ Aresta\ *atual\ =\ grafo-\/>vertices[i].arestas;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ Aresta\ *proximo\ =\ atual-\/>proxima;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ free(atual);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ atual\ =\ proximo;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ Libera\ a\ memória\ alocada\ para\ o\ array\ de\ vértices\ e,\ finalmente,\ para\ o\ próprio\ grafo}}
+\DoxyCodeLine{00071\ \ \ \ \ free(grafo-\/>vertices);}
+\DoxyCodeLine{00072\ \ \ \ \ free(grafo);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00074\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,98 @@
+\doxysection{Referência ao ficheiro C\+:/\+Users/\+Areal/\+Documents/\+Git\+Hub/\+CProjects/\+EDA/\+PFase2/include/header.h}
+\label{header_8h}\index{C:/Users/Areal/Documents/GitHub/CProjects/EDA/PFase2/include/header.h@{C:/Users/Areal/Documents/GitHub/CProjects/EDA/PFase2/include/header.h}}
+
+
+Ficheiro Header que inclui bibliotecas e protótipo da função main.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ main} ()
+\begin{DoxyCompactList}\small\item\em Ponto de Entrada da aplicação. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Ficheiro Header que inclui bibliotecas e protótipo da função main. 
+
+\begin{DoxyAuthor}{Autor}
+Miguel Areal ({\texttt{ a29559@alunos.\+ipca.\+pt}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+04-\/2024
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+Definido no ficheiro \textbf{ header.\+h}.
+
+
+
+\doxysubsection{Documentação das funções}
+\label{header_8h_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{header.h@{header.h}!main@{main}}
+\index{main@{main}!header.h@{header.h}}
+\doxysubsubsection{main()}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Ponto de Entrada da aplicação. 
+
+\begin{DoxyReturn}{Retorna}
+int 1 para insucesso, 0 para sucesso na execução. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 14} do ficheiro \textbf{ main.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ resultado;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ficheiro\ =\ \textcolor{stringliteral}{"{}./data/matriz.txt"{}};}
+\DoxyCodeLine{00017\ \ \ \ \ GR\ *grafo\ =\ carrega\_fich(ficheiro);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (grafo\ ==\ NULL)\{printf(\textcolor{stringliteral}{"{}Erro\ ao\ abrir\ o\ ficheiro.\(\backslash\)n"{}});\textcolor{keywordflow}{return}\ -\/21;\}}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ print\_grafo(grafo);}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Alterar\ peso\ de\ aresta\(\backslash\)n"{}});}
+\DoxyCodeLine{00023\ \ \ \ \ resultado\ =\ alterar\_peso(grafo,1,0,100);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (resultado\ ==\ -\/31)\{printf(\textcolor{stringliteral}{"{}Erro:\ Vértices\ Inválidos.\(\backslash\)n"{}});\ \textcolor{keywordflow}{return}\ resultado;\}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (resultado\ ==\ -\/32)\{printf(\textcolor{stringliteral}{"{}Erro:\ Não\ foi\ encontrada\ uma\ aresta\ entre\ os\ vértices\ especificados.\(\backslash\)n"{}});\ \textcolor{keywordflow}{return}\ resultado;\}}
+\DoxyCodeLine{00026\ \ \ \ \ print\_grafo(grafo);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Remocao\ de\ aresta\(\backslash\)n"{}});}
+\DoxyCodeLine{00029\ \ \ \ \ resultado\ =\ rem\_aresta(grafo,2,3);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (resultado\ ==\ -\/11)\{printf(\textcolor{stringliteral}{"{}Erro:\ Vértices\ Inválidos.\(\backslash\)n"{}});\ \textcolor{keywordflow}{return}\ resultado;\}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (resultado\ ==\ -\/12)\{printf(\textcolor{stringliteral}{"{}Erro:\ Não\ foi\ encontrada\ uma\ aresta\ entre\ os\ vértices\ especificados.\(\backslash\)n"{}});\textcolor{keywordflow}{return}\ resultado;\}}
+\DoxyCodeLine{00032\ \ \ \ \ print\_grafo(grafo);}
+\DoxyCodeLine{00033\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Adicao\ de\ aresta\(\backslash\)n"{}});}
+\DoxyCodeLine{00035\ \ \ \ \ resultado\ =\ add\_aresta(\&(grafo-\/>vertices[0]),\ \&(grafo-\/>vertices[1]),\ 50);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (resultado\ ==\ -\/1)\{printf(\textcolor{stringliteral}{"{}Erro:\ Falha\ na\ alocação\ de\ memória.\(\backslash\)n"{}});\ \textcolor{keywordflow}{return}\ resultado;\}}
+\DoxyCodeLine{00037\ \ \ \ \ print\_grafo(grafo);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ caminho[]\ =\ \{1,0,2,0\};\ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ tamanho\_caminho\ =\ \textcolor{keyword}{sizeof}(caminho)\ /\ \textcolor{keyword}{sizeof}(caminho[0]);}
+\DoxyCodeLine{00042\ \ \ \ \ resultado\ =\ soma\_pesos\_caminho(grafo,\ caminho,\ tamanho\_caminho);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}(resultado\ ==\ -\/41)\{printf(\textcolor{stringliteral}{"{}Erro:\ Caminho\ Inválido.\(\backslash\)n"{}});\textcolor{keywordflow}{return}\ resultado;\}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (resultado\ ==\ -\/42)\{printf(\textcolor{stringliteral}{"{}Erro:\ Vértice\ inválido\ no\ caminho.\(\backslash\)n"{}});\textcolor{keywordflow}{return}\ resultado;\}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (resultado\ ==\ -\/43)\{printf(\textcolor{stringliteral}{"{}Erro:\ Não\ foi\ encontrada\ uma\ aresta\ entre\ os\ vértices.\(\backslash\)n"{}});\ \textcolor{keywordflow}{return}\ resultado;\}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{else}\ printf(\textcolor{stringliteral}{"{}Soma\ dos\ valores\ dos\ vertices\ no\ caminho:\ \%d\(\backslash\)n"{}},\ resultado);}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ resultado\ =\ encontrar\_maior\_soma\_caminho(grafo);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (resultado\ ==\ -\/51)\{printf(\textcolor{stringliteral}{"{}Erro:\ Nenhum\ caminho\ encontrado."{}});\ \textcolor{keywordflow}{return}\ resultado;\}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{else}\ printf(\textcolor{stringliteral}{"{}Maior\ soma:\ \%d\(\backslash\)n"{}},\ resultado);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ liberta\_grafo(grafo);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}

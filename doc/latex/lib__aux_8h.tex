@@ -1,0 +1,231 @@
+\doxysection{Referência ao ficheiro C\+:/\+Users/\+Areal/\+Documents/\+Git\+Hub/\+CProjects/\+EDA/\+PFase2/lib/lib\+\_\+aux.h}
+\label{lib__aux_8h}\index{C:/Users/Areal/Documents/GitHub/CProjects/EDA/PFase2/lib/lib\_aux.h@{C:/Users/Areal/Documents/GitHub/CProjects/EDA/PFase2/lib/lib\_aux.h}}
+
+
+Ficheiro Header auxiliar da biblioteca \textquotesingle{}lib\textquotesingle{}.  
+
+
+{\ttfamily \#include "{}lib.\+h"{}}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Vertice} $\ast$ \textbf{ criar\+\_\+vertice} (int valor)
+\begin{DoxyCompactList}\small\item\em Cria e inicializa um novo vértice com o valor especificado. \end{DoxyCompactList}\item 
+int \textbf{ adicionar\+\_\+caminho} (\textbf{ Caminho} $\ast$$\ast$lista, int $\ast$caminho, int tamanho)
+\begin{DoxyCompactList}\small\item\em Adiciona um novo caminho à estrutura de Caminhos. \end{DoxyCompactList}\item 
+int \textbf{ limpar\+\_\+caminhos} (\textbf{ Caminho} $\ast$lista)
+\begin{DoxyCompactList}\small\item\em Função para limpar da memória a lista de caminhos. \end{DoxyCompactList}\item 
+void \textbf{ print\+\_\+grafo} (\textbf{ GR} $\ast$grafo)
+\begin{DoxyCompactList}\small\item\em Exibe na consola uma visualização do grafo, mostrando as conexões entre vértices e o peso de cada aresta. \end{DoxyCompactList}\item 
+int \textbf{ liberta\+\_\+grafo} (\textbf{ GR} $\ast$grafo)
+\begin{DoxyCompactList}\small\item\em Liberta a memória alocada para o grafo. Percorre o grafo consoante o número de arestas, libertando a memória de cada aresta. Por fim liberta os vértices e o próprio grafo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Ficheiro Header auxiliar da biblioteca \textquotesingle{}lib\textquotesingle{}. 
+
+\begin{DoxyAuthor}{Autor}
+Miguel Areal ({\texttt{ a29559@alunos.\+ipca.\+pt}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+04-\/2024
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+Definido no ficheiro \textbf{ lib\+\_\+aux.\+h}.
+
+
+
+\doxysubsection{Documentação das funções}
+\label{lib__aux_8h_a8c65602e8530b5d9bad2f1b95b5139ca} 
+\index{lib\_aux.h@{lib\_aux.h}!adicionar\_caminho@{adicionar\_caminho}}
+\index{adicionar\_caminho@{adicionar\_caminho}!lib\_aux.h@{lib\_aux.h}}
+\doxysubsubsection{adicionar\_caminho()}
+{\footnotesize\ttfamily int adicionar\+\_\+caminho (\begin{DoxyParamCaption}\item[{\textbf{ Caminho} $\ast$$\ast$}]{lista,  }\item[{int $\ast$}]{caminho,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
+
+
+
+Adiciona um novo caminho à estrutura de Caminhos. 
+
+Esta função cria um novo nó de caminho, copia os vértices do caminho fornecido para o novo nó, e então adiciona este nó à lista ligada de caminhos. A lista de caminhos é atualizada para incluir o novo caminho no início da lista.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & Ponteiro para o ponteiro da lista de caminhos. É usado para atualizar a lista com o novo caminho. \\
+\hline
+{\em caminho} & Array de inteiros representando a sequência de vértices no novo caminho. \\
+\hline
+{\em tamanho} & O número de vértices no array do caminho. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 0\+: Sucesso. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 24} do ficheiro \textbf{ lib\+\_\+aux.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ Caminho\ *novo\_caminho\ =\ (Caminho*)malloc(\textcolor{keyword}{sizeof}(Caminho));}
+\DoxyCodeLine{00026\ \ \ \ \ novo\_caminho-\/>vertices\ =\ (\textcolor{keywordtype}{int}*)malloc(tamanho\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00027\ \ \ \ \ memcpy(novo\_caminho-\/>vertices,\ caminho,\ tamanho\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00028\ \ \ \ \ novo\_caminho-\/>tamanho\ =\ tamanho;}
+\DoxyCodeLine{00029\ \ \ \ \ novo\_caminho-\/>proximo\ =\ *lista;}
+\DoxyCodeLine{00030\ \ \ \ \ *lista\ =\ novo\_caminho;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00032\ \}}
+
+\end{DoxyCode}
+\label{lib__aux_8h_abe9730e0044002509df79cc6d2f7e0c6} 
+\index{lib\_aux.h@{lib\_aux.h}!criar\_vertice@{criar\_vertice}}
+\index{criar\_vertice@{criar\_vertice}!lib\_aux.h@{lib\_aux.h}}
+\doxysubsubsection{criar\_vertice()}
+{\footnotesize\ttfamily \textbf{ Vertice} $\ast$ criar\+\_\+vertice (\begin{DoxyParamCaption}\item[{int}]{valor }\end{DoxyParamCaption})}
+
+
+
+Cria e inicializa um novo vértice com o valor especificado. 
+
+Esta função aloca memória para um novo vértice, define o seu valor e inicializa as suas arestas como NULL e o número de arestas como 0.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em value} & O valor a ser atribuído ao vértice. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Um ponteiro para o novo vértice criado, ou NULL se a alocação de memória falhar. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 15} do ficheiro \textbf{ lib\+\_\+aux.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ Vertice\ *v\ =\ (Vertice*)malloc(\textcolor{keyword}{sizeof}(Vertice));}
+\DoxyCodeLine{00017\ \ \ \ \ v-\/>valor\ =\ valor;}
+\DoxyCodeLine{00018\ \ \ \ \ v-\/>arestas\ =\ NULL;}
+\DoxyCodeLine{00019\ \ \ \ \ v-\/>num\_arestas\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}
+\label{lib__aux_8h_a0bcbe88b1650155e3dd2f86edad8c472} 
+\index{lib\_aux.h@{lib\_aux.h}!liberta\_grafo@{liberta\_grafo}}
+\index{liberta\_grafo@{liberta\_grafo}!lib\_aux.h@{lib\_aux.h}}
+\doxysubsubsection{liberta\_grafo()}
+{\footnotesize\ttfamily int liberta\+\_\+grafo (\begin{DoxyParamCaption}\item[{\textbf{ GR} $\ast$}]{grafo }\end{DoxyParamCaption})}
+
+
+
+Liberta a memória alocada para o grafo. Percorre o grafo consoante o número de arestas, libertando a memória de cada aresta. Por fim liberta os vértices e o próprio grafo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em grafo} & Instância do grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 0\+: Sucesso. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 60} do ficheiro \textbf{ lib\+\_\+aux.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ grafo-\/>num\_vertices;\ i++)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Liberta\ a\ memória\ alocada\ para\ cada\ aresta}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ Aresta\ *atual\ =\ grafo-\/>vertices[i].arestas;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ NULL)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ Aresta\ *proximo\ =\ atual-\/>proxima;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ free(atual);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ atual\ =\ proximo;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ Libera\ a\ memória\ alocada\ para\ o\ array\ de\ vértices\ e,\ finalmente,\ para\ o\ próprio\ grafo}}
+\DoxyCodeLine{00071\ \ \ \ \ free(grafo-\/>vertices);}
+\DoxyCodeLine{00072\ \ \ \ \ free(grafo);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00074\ \}}
+
+\end{DoxyCode}
+\label{lib__aux_8h_a3ca8be6307b299ff7827b2fef9cc66ed} 
+\index{lib\_aux.h@{lib\_aux.h}!limpar\_caminhos@{limpar\_caminhos}}
+\index{limpar\_caminhos@{limpar\_caminhos}!lib\_aux.h@{lib\_aux.h}}
+\doxysubsubsection{limpar\_caminhos()}
+{\footnotesize\ttfamily int limpar\+\_\+caminhos (\begin{DoxyParamCaption}\item[{\textbf{ Caminho} $\ast$}]{lista }\end{DoxyParamCaption})}
+
+
+
+Função para limpar da memória a lista de caminhos. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lista} & Ponteiro para a estrutura dos caminhos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 0\+: Sucesso. 
+\end{DoxyReturn}
+
+
+Definido na linha \textbf{ 35} do ficheiro \textbf{ lib\+\_\+aux.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{while}\ (lista\ !=\ NULL)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ Caminho\ *temp\ =\ lista;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ lista\ =\ lista-\/>proximo;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ free(temp-\/>vertices);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ free(temp);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+\label{lib__aux_8h_a094b93e00bcd29877a183df14b17ac98} 
+\index{lib\_aux.h@{lib\_aux.h}!print\_grafo@{print\_grafo}}
+\index{print\_grafo@{print\_grafo}!lib\_aux.h@{lib\_aux.h}}
+\doxysubsubsection{print\_grafo()}
+{\footnotesize\ttfamily void print\+\_\+grafo (\begin{DoxyParamCaption}\item[{\textbf{ GR} $\ast$}]{grafo }\end{DoxyParamCaption})}
+
+
+
+Exibe na consola uma visualização do grafo, mostrando as conexões entre vértices e o peso de cada aresta. 
+
+Esta função percorre todos os vértices do grafo e imprime informações sobre as arestas conectadas a cada vértice. Cada linha começa com o índice do vértice, seguido por uma lista de todas as arestas conectadas a ele, incluindo o destino da aresta e o peso associado. Os vértices são numerados de 1 a n, onde n é o número total de vértices no grafo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em grafo} & Instância do grafo. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha \textbf{ 46} do ficheiro \textbf{ lib\+\_\+aux.\+c}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ grafo-\/>num\_vertices;\ i++)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Vertice\ v\ =\ grafo-\/>vertices[i];}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}V\%d:\ "{}},\ v.valor\ +\ 1);\ \textcolor{comment}{//\ Vértices\ numerados\ de\ 1\ a\ n\ (em\ vez\ de\ 0\ a\ n)}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Imprime\ informações\ sobre\ as\ arestas\ conectadas\ ao\ vértice}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Aresta\ *a\ =\ v.arestas;\ a\ !=\ NULL;\ a\ =\ a-\/>proxima)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/>\ V\%d\ (Peso\ \%d)\ "{}},\ a-\/>destino-\/>valor\ +\ 1,\ a-\/>peso);\ \textcolor{comment}{//\ Vértices\ numerados\ de\ 1\ a\ n}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}

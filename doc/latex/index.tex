@@ -1,0 +1,129 @@
+\chapter{Projeto de Avaliação -\/ Fase 2}
+\label{index}\index{Projeto de Avaliação -\/ Fase 2@{Projeto de Avaliação -\/ Fase 2}}
+\label{index_md__c_1_2_users_2_areal_2_documents_2_git_hub_2_c_projects_2_e_d_a_2_p_fase2_2_r_e_a_d_m_e}%
+ Estrutura de Dados Avançadas
+
+Licenciatura em Engenharia de Sistemas Informáticos ({\itshape regime pós-\/laboral}) 2023-\/24\doxysection{Autor}\label{index_autor}
+Miguel Areal -\/ Nº29559 -\/ {\texttt{ a29559@alunos.\+ipca.\+pt}}\doxysection{Organização}\label{index_organização}
+{\texttt{ src/}} Código principal da solução desenvolvida.
+
+{\texttt{ lib/}} Código da biblioteca da solução desenvolvida.\doxysection{Objetivo}\label{index_objetivo}
+Este projeto surge da necessidade de aplicar conceitos avançados de teoria dos grafos e programação em C para resolver problemas computacionais de com algum nível de complexidade. Está inserido na disciplina de estruturas de dados avançadas, com um foco especial na implementação de soluções eficientes para manipulação e análise de grafos. Neste contexto, a segunda fase do projeto visa desenvolver uma aplicação capaz de gerir e manipular dados de grafos, calcular somas de pesos, criação de grafos a partir de uma matriz, e mais. A aplicação será construída sobre estruturas de dados dinâmicas que representam um grafo, vértices, arestas, e caminhos permitindo a modelagem e resolução de problemas através da utilização de algoritmos de procura. O objetivo principal desta fase é aprender a definir e manipular estruturas de dados dinâmicas, e aplicar algoritmos para encontrar soluções ótimas em problemas de somas e procura. Para alcançar este objetivo, foram estabelecidas várias tarefas, incluindo a definição de estruturas de dados, modelagem do problema, implementação de algoritmos de procura e manipulação de grafos, e desenvolvimento de funções para cálculo de somas e identificação de caminhos.\doxysection{Estrutura do Projeto}\label{index_estrutura-do-projeto}
+
+\begin{DoxyItemize}
+\item {\texttt{ data/}}
+\begin{DoxyItemize}
+\item Armazena o {\texttt{ ficheiro de dados}} utilizado pela aplicação.
+\begin{DoxyItemize}
+\item {\texttt{ matriz.\+txt}}
+\begin{DoxyItemize}
+\item Matriz utilizada pela aplicação.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item {\texttt{ include/}}
+\begin{DoxyItemize}
+\item Contém os arquivos de cabeçalho (headers) do projeto.
+\begin{DoxyItemize}
+\item {\texttt{ header.\+h}}
+\begin{DoxyItemize}
+\item Ficheiro header principal que conecta e declara as funções do programa em linguagem C.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item {\texttt{ src/}}
+\begin{DoxyItemize}
+\item Contém os ficheiros fonte do programa em linguagem C.
+\begin{DoxyItemize}
+\item {\texttt{ main.\+c}}
+\begin{DoxyItemize}
+\item Ficheiro principal que contém a função {\ttfamily main} e a lógica principal do programa, incluindo tratamento de erros.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item {\texttt{ lib/}}
+\begin{DoxyItemize}
+\item Contém os ficheiros fonte da biblioteca, em linguagem C.
+\begin{DoxyItemize}
+\item {\texttt{ lib.\+c}}
+\begin{DoxyItemize}
+\item Ficheiro principal contendo as funções utilizadas para realizar operações com os dados.
+\end{DoxyItemize}
+\item {\texttt{ lib.\+h}}
+\begin{DoxyItemize}
+\item Ficheiro header que contém a declaração das funções e estruturas de dados utilizadas.
+\end{DoxyItemize}
+\item {\texttt{ lib\+\_\+aux.\+c}}
+\begin{DoxyItemize}
+\item Ficheiro auxiliar contendo as funções utilizadas para realizar operações menores.
+\end{DoxyItemize}
+\item {\texttt{ lib\+\_\+aux.\+h}}
+\begin{DoxyItemize}
+\item Ficheiro header que contém a declaração das funções auxiliares. ~\newline
+
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item [Makefile](Makefile)
+\begin{DoxyItemize}
+\item Ficheiro utilizado pelo comando {\ttfamily make} para compilar o projeto de forma automatizada.
+\end{DoxyItemize}
+\item \doxyref{README.md}{p. }{index_md__c_1_2_users_2_areal_2_documents_2_git_hub_2_c_projects_2_e_d_a_2_p_fase2_2_r_e_a_d_m_e}
+\begin{DoxyItemize}
+\item Ficheiro que contém informações básicas sobre o projeto, a sua descrição, uso e outras instruções.
+\end{DoxyItemize}
+\item {\texttt{ lib.\+dll}}
+\begin{DoxyItemize}
+\item Ficheiro do tipo {\ttfamily Dynamic Link Library}, compilado através dos ficheiros em {\texttt{ lib/}}. Para ser utilizado, necessita de estar no mesmo diretório que {\texttt{ PFase2.\+exe}}.
+\end{DoxyItemize}
+\item {\texttt{ PFase2.\+exe}}
+\begin{DoxyItemize}
+\item Executável do projeto, gerado após a compilação.
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysubsection{Descrição da Estrutura}\label{index_descrição-da-estrutura}
+Este projeto está organizado de forma a separar claramente os componentes do código-\/fonte, dados e documentação.
+
+Os diretórios {\ttfamily doc/} e {\ttfamily data/} mantêm a {\texttt{ documentação gerada em {\itshape Doxygen}}} e os ficheiros de dados usados pelo programa, respetivamente.
+
+O diretório {\ttfamily include/} mantém o ficheiro principal de cabeçalho que interliga todas as funções e algoritmos do projeto.
+
+O diretório {\ttfamily lib/} possui os ficheiros relativos ao código da biblioteca utilizada.
+
+Já o diretório {\ttfamily src/} contém os ficheiros-\/fonte da aplicação, organizados de acordo com suas funcionalidades específicas.
+
+O ficheiro {\ttfamily Makefile} automatiza o processo de compilação do projeto, enquanto {\ttfamily \doxyref{README.\+md}{p. }{_r_e_a_d_m_e_8md}} fornece informações básicas sobre o projeto.
+
+Por fim, {\ttfamily PFase2.\+exe} é o executável gerado após a compilação do projeto (também compila a biblioteca ao mesmo efeito).\doxysection{Compilação}\label{index_compilação}
+Para a compilação e execução do programa, é apenas necessário utilizar o comando {\itshape make} a partir do diretório raíz do projeto.
+
+Após a compilação do projeto, é gerado um novo executável {\ttfamily PFase2.\+exe} e {\ttfamily lib.\+dll}, na raíz do repositório. \doxysection{Execução / Utilização}\label{index_execução--utilização}
+Para executar esta aplicação, é possível de duas formas\+:
+\begin{DoxyItemize}
+\item Ambiente gráfico\+:
+\begin{DoxyItemize}
+\item Duplo-\/clique no ficheiro {\ttfamily PFase2.\+exe}
+\end{DoxyItemize}
+\item CLI / Consola\+:
+\begin{DoxyItemize}
+\item Navegar para o diretório raíz do projeto, e executar {\ttfamily ./\+PFase2.exe}
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysection{Bibliografia}\label{index_bibliografia}
+
+\begin{DoxyItemize}
+\item {\texttt{ https\+://www.\+tutorialspoint.\+com/c\+\_\+standard\+\_\+library/index.\+htm}}
+\item {\texttt{ https\+://www.\+doxygen.\+nl/manual/docblocks.\+html}}
+\item {\texttt{ https\+://stackoverflow.\+com}}
+\item {\texttt{ https\+://code.\+visualstudio.\+com}}
+\item {\texttt{ https\+://gnuwin32.\+sourceforge.\+net/packages/make.\+htm}}
+\item {\texttt{ https\+://sourceforge.\+net/projects/mingw/files/}}
+\item {\texttt{ https\+://elemarjr.\+com/clube-\/de-\/estudos/artigos/o-\/algoritmo-\/hungaro-\/e-\/a-\/solucao-\/de-\/problemas-\/de-\/atribuicao/}}
+\item {\texttt{ https\+://chat.\+openai.\+com}}
+\item {\texttt{ https\+://devdocs.\+io/c/}}
+\item {\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Hungarian\+\_\+algorithm}}
+\item {\texttt{ https\+://www.\+geeksforgeeks.\+org/what-\/is-\/linked-\/list/}}
+\item {\texttt{ https\+://pubs.\+opengroup.\+org/onlinepubs/009695399/basedefs/stdbool.\+h.\+html}}
+\item {\texttt{ https\+://www.\+tutorialspoint.\+com/c\+\_\+standard\+\_\+library/ctype\+\_\+h.\+htm}}
+\item {\texttt{ https\+://www.\+tutorialspoint.\+com/c\+\_\+standard\+\_\+library/limits\+\_\+h.\+htm}}
+\item {\texttt{ https\+://www.\+simplilearn.\+com/tutorials/data-\/structure-\/tutorial/dfs-\/algorithm}}
+\item {\texttt{ https\+://www.\+cs.\+yale.\+edu/homes/aspnes/pinewiki/\+C(2f)\+Graphs.\+html}} 
+\end{DoxyItemize}
