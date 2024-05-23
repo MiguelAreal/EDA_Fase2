@@ -13,11 +13,11 @@ Miguel Areal - Nº29559 - a29559@alunos.ipca.pt
 [lib/](./lib/)  Código da biblioteca da solução desenvolvida.
 
 ## Objetivo
-Este projeto surge da necessidade de aplicar conceitos avançados de teoria dos grafos e programação em C para resolver problemas computacionais de com algum nível de complexidade.
+Este projeto surge da necessidade de aplicar conceitos avançados de teoria dos grafos e programação em C para resolver problemas computacionais de com algum nível de complexidade.  
 Está inserido na disciplina de estruturas de dados avançadas, com um foco especial na implementação de soluções eficientes para manipulação e análise de grafos.
-Neste contexto, a segunda fase do projeto visa desenvolver uma aplicação capaz de gerir e manipular dados de grafos, calcular somas de pesos, criação de grafos a partir de uma matriz, e mais.
-A aplicação será construída sobre estruturas de dados dinâmicas que representam um grafo, vértices, arestas, e caminhos permitindo a modelagem e resolução de problemas através da utilização de algoritmos de procura.
-O objetivo principal desta fase é aprender a definir e manipular estruturas de dados dinâmicas, e aplicar algoritmos para encontrar soluções ótimas em problemas de somas e procura.
+Neste contexto, a segunda fase do projeto visa desenvolver uma aplicação capaz de gerir e manipular dados de grafos, calcular somas de pesos, criação de grafos a partir de uma matriz, e mais.  
+A aplicação será construída sobre estruturas de dados dinâmicas que representam um grafo, vértices, arestas, e caminhos permitindo a modelagem e resolução de problemas através da utilização de algoritmos de procura.  
+O objetivo principal desta fase é aprender a definir e manipular estruturas de dados dinâmicas, e aplicar algoritmos para encontrar soluções ótimas em problemas de somas e procura.  
 Para alcançar este objetivo, foram estabelecidas várias tarefas, incluindo a definição de estruturas de dados, modelagem do problema, implementação de algoritmos de procura e manipulação de grafos, e desenvolvimento de funções para cálculo de somas e identificação de caminhos.
 
   
